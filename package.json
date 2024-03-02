@@ -1,0 +1,28 @@
+{
+  "name": "stylusdb-sql",
+  "version": "0.1.6",
+  "description": "A minimal SQL based DB based on CSV files. For educational purposes only.",
+  "main": "./src/index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest",
+    "test-verbose": "jest --verbose",
+    "server": "node ./src/server.js"
+  },
+  "bin": {
+    "stylusdb-cli": "node ./src/cli.js"
+  },
+  "keywords": [],
+  "author": "Chakshu Gautam",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "json2csv": "^6.0.0-alpha.2",
+    "xterm": "^5.3.0"
+  }
+}
