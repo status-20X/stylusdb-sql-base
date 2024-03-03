@@ -1,5 +1,10 @@
 <h1 align="center">StylusDB SQL</h1>
-<p align="center">A SQL database engine written in JavaScript</p>
+<p align="center">
+A SQL database engine written in JavaScript
+
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-green.svg)](https://github.com/ChakshuGautam/stylusdb-sql)
+[![GitHub Repo](https://img.shields.io/github/stars/ChakshuGautam/stylusdb-sql?style=social)](https://github.com/ChakshuGautam/stylusdb-sql)
+</p>
 
 This is the base repository for cohort members to follow the tutorial and send in their own StylusDB SQL implementations. You can refer to a complete implementation @ [ChakshuGautam/stylusdb-sql](https://github.com/ChakshuGautam/stylusdb-sql).
 
