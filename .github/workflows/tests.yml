@@ -1,0 +1,44 @@
+name: Run Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm i
+    - run: npm run test:1
+    - run: npm run test:2
+    - run: npm run test:3
+    - run: npm run test:4
+    - run: npm run test:5
+    - run: npm run test:6
+    - run: npm run test:7
+    - run: npm run test:8
+    - run: npm run test:9
+    - run: npm run test:10
+    - run: npm run test:11
+    - run: npm run test:12
+    - run: npm run test:13
+    - run: npm run test:14
+    - run: npm run test:15
+    - run: npm run test:16
+    - run: npm run test:17
+    - run: npm run test:18
+    - run: npm run test:19
+    - run: npm run test:20
