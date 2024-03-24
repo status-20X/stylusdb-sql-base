@@ -1,6 +1,7 @@
 const readCSV = require('../../src/csvReader');
 const parseQuery = require('../../src/queryParser');
 const executeSELECTQuery = require('../../src/index');
+// const executeSELECTQuery = require('../src/index');
 
 test('Read CSV File', async () => {
     const data = await readCSV('./sample.csv');
@@ -18,6 +19,19 @@ test('Parse SQL Query', () => {
         table: 'sample'
     });
 });
+
+test('Execute SQL Query', async () => {
+    const query = 'SELECT id, name FROM sample';
+    const result = await executeSELECTQuery(query);
+    expect(result.length).toBeGreaterThan(0);
+    expect(result[0]).toHaveProperty('id');
+    expect(result[0]).toHaveProperty('name');
+    expect(result[0]).not.toHaveProperty('age');
+    expect(result[0]).toEqual({ id: '1', name: 'John' });
+});
+
+// tests/index.test.js
+
 
 test('Execute SQL Query', async () => {
     const query = 'SELECT id, name FROM sample';
