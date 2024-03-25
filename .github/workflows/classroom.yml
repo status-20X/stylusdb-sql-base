@@ -1,19 +1,220 @@
-name: GitHub Classroom Workflow
-
-on:
-  - push
-  - workflow_dispatch
-
+name: Autograding Tests
+'on':
+- push
+- workflow_dispatch
+- repository_dispatch
 permissions:
   checks: write
   actions: read
   contents: read
-
 jobs:
-  build:
-    name: Autograding
+  run-autograding-tests:
     runs-on: ubuntu-latest
     if: github.actor != 'github-classroom[bot]'
     steps:
-      - uses: actions/checkout@v4
-      - uses: education/autograding@v1
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Step-1 Test
+      id: step-1-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-1 Test
+        setup-command: npm install
+        command: npm run test:1
+        timeout: 10
+        max-score: 10
+    - name: Step-2 Test
+      id: step-2-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-2 Test
+        setup-command: npm install
+        command: npm run test:2
+        timeout: 10
+        max-score: 10
+    - name: Step-3 Test
+      id: step-3-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-3 Test
+        setup-command: npm install
+        command: npm run test:3
+        timeout: 10
+        max-score: 10
+    - name: Step-4 Test
+      id: step-4-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-4 Test
+        setup-command: npm install
+        command: npm run test:4
+        timeout: 10
+    - name: Step-5 Test
+      id: step-5-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-5 Test
+        setup-command: npm install
+        command: npm run test:5
+        timeout: 10
+        max-score: 10
+    - name: Step-6 Test
+      id: step-6-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-6 Test
+        setup-command: npm install
+        command: npm run test:6
+        timeout: 10
+        max-score: 10
+    - name: Step-7 Test
+      id: step-7-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-7 Test
+        setup-command: npm install
+        command: npm run test:7
+        timeout: 10
+        max-score: 10
+    - name: Step-8 Test
+      id: step-8-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-8 Test
+        setup-command: npm install
+        command: npm run test:8
+        timeout: 10
+        max-score: 10
+    - name: Step-9 Test
+      id: step-9-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-9 Test
+        setup-command: npm install
+        command: npm run test:9
+        timeout: 10
+        max-score: 10
+    - name: Step-10 Test
+      id: step-10-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-10 Test
+        setup-command: npm install
+        command: npm run test:10
+        timeout: 10
+        max-score: 10
+    - name: Step-11 Test
+      id: step-11-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-11 Test
+        setup-command: npm install
+        command: npm run test:11
+        timeout: 10
+        max-score: 10
+    - name: Step-12 Test
+      id: step-12-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-12 Test
+        setup-command: npm install
+        command: npm run test:12
+        timeout: 10
+        max-score: 10
+    - name: Step-13 Test
+      id: step-13-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-13 Test
+        setup-command: npm install
+        command: npm run test:13
+        timeout: 10
+        max-score: 10
+    - name: Step-14 Test
+      id: step-14-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-14 Test
+        setup-command: npm install
+        command: npm run test:14
+        timeout: 10
+        max-score: 10
+    - name: Step-15 Test
+      id: step-15-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-15 Test
+        setup-command: npm install
+        command: npm run test:15
+        timeout: 10
+        max-score: 10
+    - name: Step-16 Test
+      id: step-16-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-16 Test
+        setup-command: npm install
+        command: npm run test:16
+        timeout: 10
+        max-score: 10
+    - name: Step-17 Test
+      id: step-17-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-17 Test
+        setup-command: npm install
+        command: npm run test:17
+        timeout: 10
+        max-score: 10
+    - name: Step-18 Test
+      id: step-18-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-18 Test
+        setup-command: npm install
+        command: npm run test:18
+        timeout: 10
+        max-score: 10
+    - name: Step-19 Test
+      id: step-19-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-19 Test
+        setup-command: npm install
+        command: npm run test:19
+        timeout: 10
+        max-score: 10
+    - name: Step-20 Test
+      id: step-20-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Step-20 Test
+        setup-command: npm install
+        command: npm run test:20
+        timeout: 10
+        max-score: 10
+    - name: Autograding Reporter
+      uses: education/autograding-grading-reporter@v1
+      env:
+        STEP-1-TEST_RESULTS: "${{steps.step-1-test.outputs.result}}"
+        STEP-2-TEST_RESULTS: "${{steps.step-2-test.outputs.result}}"
+        STEP-3-TEST_RESULTS: "${{steps.step-3-test.outputs.result}}"
+        STEP-4-TEST_RESULTS: "${{steps.step-4-test.outputs.result}}"
+        STEP-5-TEST_RESULTS: "${{steps.step-5-test.outputs.result}}"
+        STEP-6-TEST_RESULTS: "${{steps.step-6-test.outputs.result}}"
+        STEP-7-TEST_RESULTS: "${{steps.step-7-test.outputs.result}}"
+        STEP-8-TEST_RESULTS: "${{steps.step-8-test.outputs.result}}"
+        STEP-9-TEST_RESULTS: "${{steps.step-9-test.outputs.result}}"
+        STEP-10-TEST_RESULTS: "${{steps.step-10-test.outputs.result}}"
+        STEP-11-TEST_RESULTS: "${{steps.step-11-test.outputs.result}}"
+        STEP-12-TEST_RESULTS: "${{steps.step-12-test.outputs.result}}"
+        STEP-13-TEST_RESULTS: "${{steps.step-13-test.outputs.result}}"
+        STEP-14-TEST_RESULTS: "${{steps.step-14-test.outputs.result}}"
+        STEP-15-TEST_RESULTS: "${{steps.step-15-test.outputs.result}}"
+        STEP-16-TEST_RESULTS: "${{steps.step-16-test.outputs.result}}"
+        STEP-17-TEST_RESULTS: "${{steps.step-17-test.outputs.result}}"
+        STEP-18-TEST_RESULTS: "${{steps.step-18-test.outputs.result}}"
+        STEP-19-TEST_RESULTS: "${{steps.step-19-test.outputs.result}}"
+        STEP-20-TEST_RESULTS: "${{steps.step-20-test.outputs.result}}"
+      with:
+        runners: step-1-test,step-2-test,step-3-test,step-4-test,step-5-test,step-6-test,step-7-test,step-8-test,step-9-test,step-10-test,step-11-test,step-12-test,step-13-test,step-14-test,step-15-test,step-16-test,step-17-test,step-18-test,step-19-test,step-20-test
