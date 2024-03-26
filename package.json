@@ -43,6 +43,7 @@
   "dependencies": {
     "csv-parser": "^3.0.0",
     "json2csv": "^6.0.0-alpha.2",
+    "stylusdb-sql": "^0.1.6",
     "xterm": "^5.3.0"
   }
 }
